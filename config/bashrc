@@ -1,0 +1,85 @@
+#! /bin/sh
+
+### ANSI color code
+RS="\[\033[0m\]"      # reset
+HC="\[\033[1m\]"      # hicolor
+UL="\[\033[4m\]"      # underline
+INV="\[\033[7m\]"     # inverse background and foreground
+FBLK="\[\033[30m\]"   # foreground black
+FRED="\[\033[0;31m\]" # foreground red
+FGRN="\[\033[0;32m\]" # foreground green
+FYEL="\[\033[0;33m\]" # foreground yellow
+FBLE="\[\033[0;34m\]" # foreground blue
+FMAG="\[\033[35m\]"   # foreground magenta
+FCYN="\[\033[0;36m\]" # foreground cyan
+FWHT="\[\033[37m\]"   # foreground white
+BBLK="\[\033[40m\]"   # background black
+BRED="\[\033[41m\]"   # background red
+BGRN="\[\033[42m\]"   # background green
+BYEL="\[\033[43m\]"   # background yellow
+BBLE="\[\033[44m\]"   # background blue
+BMAG="\[\033[45m\]"   # background magenta
+BCYN="\[\033[46m\]"   # background cyan
+BWHT="\[\033[47m\]"   # background white
+BCYNFRED="\[\033[0;31;46m\]"
+BCYNFBLK="\[\033[0;30;46m\]"
+BCYNFYEL="\[\033[0;33;46m\]"
+
+# 256 colors
+BBGRY="\[\033[48;5;235m\]"
+FFBLE="\[\033[38;5;33m\]"
+FFGRN="\[\e[38;5;34m\]"
+FFPNK="\[\033[38;5;197m\]"
+
+if [ -z "$DISPLAY" ]; then # if not in GUI
+	export LC_ALL="POSIX"
+	export LANGUAGE="POSIX"
+fi
+
+### git completion
+if [ -f ~/.$USER/config/git-completion.bash ]; then
+	. ~/.$USER/config/git-completion.bash
+fi
+
+parse_git_branch () {
+	local gps1=`__git_ps1 %s`
+	if [ "$gps1" != "" ]; then
+		echo -n "($gps1) "
+		#if git status | grep "nothing to commit" > /dev/null 2>&1; then
+		#	echo -n "($gps1) "
+		#else
+		#	echo -n "*$gps1* "
+		#fi
+	fi
+}
+
+# use 256color xterm
+dpkg -l ncurses-term 1>/dev/null 2>&1
+if [ "$?" = "0" ] && [ "$TERM" = "xterm" ]; then
+	export TERM=xterm-256color
+fi
+
+
+### set prompt
+
+# try it :-)
+#PS1="\u@\h:\W \$(parse_git_branch) \\$ "
+#PS1="${debian_chroot:+($debian_chroot)}$FRED\u$RS:$RS$FCYN\W$RS $FYEL\$(parse_git_branch)$RS \\$ "
+PS1="$RS[$BBGRY\t $FFPNK\$(__git_ps1 \(%s\)\ )$RS$BBGRY$FFBLE\W$RS] \\$ "
+
+### color-enabled man pages
+man() {
+    env LESS_TERMCAP_mb=$'\033[1;31m' \
+    LESS_TERMCAP_md=$'\033[1;34m' \
+    LESS_TERMCAP_me=$'\033[0m' \
+    LESS_TERMCAP_se=$'\033[0m' \
+    LESS_TERMCAP_so=$'\033[38;5;246m' \
+    LESS_TERMCAP_ue=$'\033[0m' \
+    LESS_TERMCAP_us=$'\033[1;32m' \
+    man "$@"
+}
+
+
+### my alias
+alias lstftp='ls -ltr ~/tftpboot'
+
