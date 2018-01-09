@@ -1,7 +1,6 @@
 #! /bin/sh
 
 git clone https://github.com/andrewintw/skel-home.git ~/.$USER
-cp gen_vim.sh ~/.$USER
 
 cd ~/.$USER && \
 ./init_setup.sh && \
