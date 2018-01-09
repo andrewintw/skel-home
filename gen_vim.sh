@@ -22,7 +22,7 @@ git clone -q https://github.com/vim-airline/vim-airline-themes vim/bundle/vim-ai
 
 print_info "install taglist"
 mkdir -p vim/bundle/taglist_46 && \
-curl -LSso taglist_46.zip https://downloads.sourceforge.net/project/vim-taglist/vim-taglist/4.6/taglist_46.zip && \
+curl -LSso taglist_46.zip 'http://pkgs.fedoraproject.org/repo/pkgs/vim-taglist/taglist_46.zip/md5/96e2ba879964b3c9e790e3906934d0c0/taglist_46.zip' && \
 unzip -qq taglist_46.zip -d vim/bundle/taglist_46 && \
 rm -rf taglist_46.zip
 
