@@ -41,6 +41,13 @@ if [ -f ~/.$USER/config/git-completion.bash ]; then
 	. ~/.$USER/config/git-completion.bash
 fi
 
+## for CentOS
+if [ -f /etc/redhat-release ]; then
+	if [ -f ~/.$USER/config/git-prompt.sh ]; then
+		. ~/.$USER/config/git-prompt.sh
+	fi
+fi
+
 parse_git_branch () {
 	local gps1=`__git_ps1 %s`
 	if [ "$gps1" != "" ]; then
