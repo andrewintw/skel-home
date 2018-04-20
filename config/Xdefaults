@@ -1,0 +1,6 @@
+xterm*faceName:		DejaVu Sans Mono
+xterm*faceSize:		10
+XTerm*Background:	black
+XTerm*Foreground:	white
+XTerm*saveLines:	1000
+!XTerm*geometry:	120x40
