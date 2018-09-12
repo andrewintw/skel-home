@@ -1,4 +1,10 @@
 #! /bin/sh
 
-OPTS=$*
-find -type f | xargs grep --color $OPTS 2>/dev/null
+# find . -type f -not -path '*/\.git/*'
+# find . -type f -not -path '*/\.svn/*'
+
+if [ $# -gt 1 ]; then
+	find -type f -not -path '*/\.git/*' | xargs grep --color "$1" "$2" 2>/dev/null
+else
+	find -type f -not -path '*/\.git/*' | xargs grep --color "$1" 2>/dev/null
+fi
