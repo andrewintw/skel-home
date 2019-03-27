@@ -82,6 +82,7 @@ endif
 
 
 " ## for arduino
-autocmd! BufNewFile,BufRead *.ino setlocal ft=arduino
-autocmd! BufNewFile,BufRead *.pde setlocal ft=arduino
+autocmd! BufNewFile,BufRead *.ino 			setlocal ft=arduino
+autocmd! BufNewFile,BufRead *.pde 			setlocal ft=arduino
+autocmd! BufNewFile,BufRead [Cc]onfig.in 	setlocal ft=kconfig
 
