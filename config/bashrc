@@ -73,6 +73,7 @@ fi
 #PS1="\u@\h:\W \$(parse_git_branch) \\$ "
 #PS1="${debian_chroot:+($debian_chroot)}$FRED\u$RS:$RS$FCYN\W$RS $FYEL\$(parse_git_branch)$RS \\$ "
 PS1="$RS[$BBGRY\t $FFPNK\$(__git_ps1 \(%s\)\ )$RS$BBGRY$FFBLE\W$RS] \\$ "
+#PS1="$RS[$FFPNK\$(__git_ps1 \(%s\)\ )$RS$BBGRY$FFBLE\W$RS] \\$ "
 
 ### color-enabled man pages
 man() {
