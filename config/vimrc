@@ -55,6 +55,7 @@ let g:airline_theme='wombat'
 " ## generial setup
 set hlsearch
 set tabstop=4
+" set expandtab
 set shiftwidth=4
 set encoding=utf-8
 set t_Co=256
@@ -67,6 +68,7 @@ set wildmode=longest:full,full
 
 
 " ## keymap setup
+nnoremap <silent> <F4> :set expandtab<CR>
 nnoremap <silent> <F5> :set invnumber<CR>
 nnoremap <silent> <F6> :NERDTreeToggle<CR>
 nnoremap <silent> <F7> :TlistToggle<CR>
@@ -86,3 +88,5 @@ autocmd! BufNewFile,BufRead *.ino 			setlocal ft=arduino
 autocmd! BufNewFile,BufRead *.pde 			setlocal ft=arduino
 autocmd! BufNewFile,BufRead [Cc]onfig.in 	setlocal ft=kconfig
 
+" ## for makefile
+autocmd! BufNewFile,BufRead *.gmk			set syntax=make
