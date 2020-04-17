@@ -33,7 +33,8 @@ FFPNK="\[\033[38;5;197m\]"
 
 if [ -z "$DISPLAY" ]; then # if not in GUI
 	export LC_ALL="POSIX"
-	export LANGUAGE="POSIX"
+	export LANG="zh_TW.UTF-8"
+	export LANGUAGE="zh_TW.UTF-8"
 fi
 
 ### git completion
@@ -89,5 +90,5 @@ man() {
 
 
 ### my alias
-alias lstftp='ls -ltr ~/tftpboot'
-
+alias lstftp='ls -ltr ~/tftpboot/'
+export PATH=~/.local/bin:${PATH}
