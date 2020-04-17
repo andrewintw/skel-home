@@ -6,7 +6,8 @@
 	br = branch
 	ci = commit
 	st = status
-	lg = log --color --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+	lg = log --color --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an>%Creset' --abbrev-commit --
+	sn = show --name-status
 	lo = log --pretty=oneline
 	df = "!f() { git diff --name-status; echo \"---\"; git diff --name-status --cached; }; f"
 [color]
