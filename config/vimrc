@@ -65,6 +65,7 @@ syntax on
 colorscheme molokai
 set wildmenu
 set wildmode=longest:full,full
+set clipboard=unnamed
 
 
 " ## keymap setup
