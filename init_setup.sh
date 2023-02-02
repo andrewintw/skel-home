@@ -7,6 +7,19 @@ print_info () {
 	echo "INFO >> $msg"
 }
 
+print_err () {
+	local msg=$1
+	echo "ERRO >> $msg"
+}
+
+chk_cmd() {
+	local cmd="$1"
+	which $cmd >/dev/null || ( print_err "CANNOT found $cmd, please install the tool!"; exit 1 )
+}
+
+chk_cmd 'curl'
+chk_cmd 'unzip'
+
 mkdir -p $BAKDIR
 
 if [ -f ~/.bashrc ]; then
