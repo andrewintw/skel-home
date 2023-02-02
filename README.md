@@ -5,7 +5,7 @@ a auto-config skeleton for set up your $HOME directory
 
 clone the project to your $HOME top and rename to .$USER (ex: ~/.andrew )
 
-	$ git clone https://github.com/andrewintw/skel-home.git ~/.$USER
+	$ git clone git@github.com:andrewintw/skel-home.git ~/.$USER
 
 	$ cd ~/.$USER
 	$ ./init_setup.sh
