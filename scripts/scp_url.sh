@@ -13,7 +13,7 @@ if [ ! -e "$target" ]; then
 	exit 1
 fi
 
-if=`route -n | grep -w UG | awk  '{print $8}'`
+if=`route -n | grep -w UG | head -n 1 | awk  '{print $8}'`
 ip=`ifconfig $if | grep -w inet | awk '{print $2}'`
 path=`readlink -f $target`
 
