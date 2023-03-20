@@ -14,7 +14,7 @@ sudo apt install unzip curl
 clone the project to your $HOME top and rename to .$USER (ex: ~/.andrew )
 
 ```
-$ git clone git@github.com:andrewintw/skel-home.git ~/.$USER
+$ git clone https://github.com/andrewintw/skel-home.git ~/.$USER
 
 $ cd ~/.$USER
 $ ./init_setup.sh
