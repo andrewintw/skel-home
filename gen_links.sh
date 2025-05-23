@@ -31,6 +31,11 @@ if [ ! -f ~/.vimrc ]; then
 	ln -sv .$USER/config/vimrc ~/.vimrc
 fi
 
+if [ ! -f ~/.tmux.conf ]; then
+	print_info "linking ~/.tmux.conf"
+	ln -sv .$USER/config/tmux.conf ~/.vimrc
+fi
+
 if [ ! -d ~/.vim ]; then
 	print_info "linking ~/.vim/"
 	ln -sv .$USER/vim ~/.vim

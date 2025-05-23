@@ -92,3 +92,4 @@ man() {
 ### my alias
 alias lstftp='ls -ltr ~/tftpboot/'
 export PATH=~/.local/bin:${PATH}
+export TERM="xterm-256color"
