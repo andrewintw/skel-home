@@ -14,7 +14,7 @@
 	ui = true
 [core]
 	editor = vim
-
+	quotepath = false
 [push]
 	default = simple
 [init]
