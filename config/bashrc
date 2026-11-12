@@ -32,10 +32,11 @@ FFGRN="\[\e[38;5;34m\]"
 FFPNK="\[\033[38;5;197m\]"
 
 if [ -z "$DISPLAY" ]; then # if not in GUI
-	export LC_ALL="POSIX"
+	export LC_ALL="zh_TW.UTF-8"
 	export LANG="zh_TW.UTF-8"
 	export LANGUAGE="zh_TW.UTF-8"
 fi
+export LESSCHARSET="utf-8"
 
 ### git completion
 if [ -f ~/.$USER/config/git-completion.bash ]; then
