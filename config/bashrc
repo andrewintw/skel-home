@@ -92,5 +92,6 @@ man() {
 
 ### my alias
 alias lstftp='ls -ltr ~/tftpboot/'
+alias diff='diff -u --color=always'
 export PATH=~/.local/bin:${PATH}
 export TERM="xterm-256color"
