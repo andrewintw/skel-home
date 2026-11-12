@@ -22,7 +22,7 @@ git clone -q https://github.com/vim-airline/vim-airline-themes vim/bundle/vim-ai
 
 print_info "install taglist"
 mkdir -p vim/bundle/taglist_46 && \
-unzip -qq pkgs/taglist_46.zip -d vim/bundle/taglist_46 && \
+unzip -qq pkgs/taglist_46.zip -d vim/bundle/taglist_46
 
 print_info "install pathogen"
 curl -LSso vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim

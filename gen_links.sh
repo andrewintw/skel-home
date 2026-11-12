@@ -33,7 +33,7 @@ fi
 
 if [ ! -f ~/.tmux.conf ]; then
 	print_info "linking ~/.tmux.conf"
-	ln -sv .$USER/config/tmux.conf ~/.vimrc
+	ln -sv .$USER/config/tmux.conf ~/.tmux.conf
 fi
 
 if [ ! -d ~/.vim ]; then
